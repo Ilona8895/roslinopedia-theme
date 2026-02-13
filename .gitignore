@@ -1,0 +1,11 @@
+# Pliki systemowe
+.DS_Store
+*.log
+Thumbs.db
+
+# Edytory
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
