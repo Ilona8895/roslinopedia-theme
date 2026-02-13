@@ -1,0 +1,43 @@
+.main-navigation {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    @include atLarge {
+      text-align: left;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+  }
+
+  li {
+    margin-bottom: 15px;
+
+    @include atLarge {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $lightGreen;
+      text-decoration: none;
+    }
+
+    @include atLarge {
+      display: inline-block;
+      padding: 0;
+      white-space: nowrap;
+    }
+  }
+}

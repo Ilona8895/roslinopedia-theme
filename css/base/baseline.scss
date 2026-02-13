@@ -1,0 +1,73 @@
+// Mixins dla media queries
+@mixin atSmall {
+  @media (min-width: $breakpoint-small) {
+    @content;
+  }
+}
+
+@mixin atMedium {
+  @media (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin atLarge {
+  @media (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin atXLarge {
+  @media (min-width: $breakpoint-xlarge) {
+    @content;
+  }
+}
+
+// Reset i podstawowe style
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  color: $darkGrey;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: $darkGreen;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1.65em 0;
+}
+
+p,
+li {
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}

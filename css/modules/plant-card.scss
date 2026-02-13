@@ -1,0 +1,55 @@
+.plant-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  min-width: 0;
+  max-width: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__image-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid $lightGreen;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $darkGrey;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    color: $lightGrey;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

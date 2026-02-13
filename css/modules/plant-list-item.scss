@@ -1,0 +1,62 @@
+.plant-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+
+  @include atMedium {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid $lightGreen;
+    margin: 0 auto;
+
+    @include atMedium {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $darkGrey;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    color: $lightGrey;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

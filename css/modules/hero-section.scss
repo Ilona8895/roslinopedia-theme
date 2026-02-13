@@ -1,0 +1,48 @@
+.hero-section {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 120px 24px 60px;
+    color: $white;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include atMedium {
+      padding: 150px 24px 80px;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    @include atMedium {
+      font-size: 3.5rem;
+    }
+
+    @include atLarge {
+      font-size: 4rem;
+    }
+  }
+}

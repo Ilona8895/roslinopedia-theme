@@ -1,0 +1,124 @@
+.site-header {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 20px;
+
+    @include atMedium {
+      padding-left: 40px;
+    }
+
+    @include atLarge {
+      padding-left: 60px;
+    }
+
+    img {
+      height: auto;
+      max-height: 100px;
+      width: auto;
+      display: block;
+
+      @include atMedium {
+        max-height: 120px;
+      }
+
+      @include atLarge {
+        max-height: 150px;
+      }
+    }
+  }
+
+  &__menu {
+    padding-right: 20px;
+
+    @include atMedium {
+      padding-right: 40px;
+    }
+
+    @include atLarge {
+      padding-right: 100px;
+    }
+
+    @media (max-width: 959px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      max-height: 70vh;
+      background-color: rgba(90, 124, 74, 0.98); // $darkGreen
+      padding: 80px 24px 32px;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      overflow-y: auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    // Active state - show menu (wyjeżdża z góry)
+    &--active {
+      @media (max-width: 959px) {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    // Desktop menu - always visible
+    @include atLarge {
+      display: block;
+      position: static;
+      background-color: transparent;
+      padding: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__menu-trigger {
+    display: none !important;
+    color: $white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 20px;
+    z-index: 4;
+    position: relative;
+    transition: transform 0.3s ease;
+
+    @include atMedium {
+      padding-right: 40px;
+    }
+
+    @media (max-width: 959px) {
+      display: block !important;
+    }
+
+    // Change icon when menu is active
+    .site-header__menu--active ~ & {
+      @media (max-width: 959px) {
+        // Icon will be changed via JS
+      }
+    }
+  }
+}
