@@ -3,7 +3,7 @@
       <div class="site-footer__inner">
         <div class="group">
           <div class="site-footer__col-one">
-            <a href="index.html" class="site-footer__logo">
+            <a href="<?php echo site_url() ?>" class="site-footer__logo">
               <img src="<?php echo get_theme_file_uri('/images/logo.png') ?>" alt="Roslinopedia">
             </a>
             <h3 class="site-footer__heading">Kategorie roślin</h3>
