@@ -1,0 +1,47 @@
+.metabox {
+  background-color: $lightGreen;
+  color: $white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  display: inline-block;
+
+  p {
+    margin: 0;
+    color: $white;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  a {
+    color: $white;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+      color: $white;
+    }
+  }
+
+  // Wariant dla bloga (jaśniejszy)
+  &--blog {
+    background-color: rgba(179, 204, 151, 0.15);
+    color: $darkGreen;
+
+    p {
+      color: $darkGreen;
+    }
+
+    a {
+      color: $darkGreen;
+      text-decoration: underline;
+
+      &:hover {
+        color: $darkGreen;
+        opacity: 0.7;
+      }
+    }
+  }
+}

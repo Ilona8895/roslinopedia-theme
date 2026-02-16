@@ -40,4 +40,12 @@
       white-space: nowrap;
     }
   }
+
+  // Aktywny element menu (WordPress automatycznie dodaje klasę current-menu-item)
+  .current-menu-item > a,
+  .current-page-ancestor > a,
+  .current-menu-parent > a {
+    color: $lightGreen;
+    font-weight: 600;
+  }
 }

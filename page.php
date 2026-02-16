@@ -1,7 +1,4 @@
-<?php get_header();
-
-while(have_posts()) {
-    the_post(); ?>
+<?php get_header(); ?>
 
 <section class="page-banner" style="background-image: url('<?php echo get_theme_file_uri('/images/banner.jpg') ?>')">
     <div class="page-banner__overlay"></div>
@@ -11,18 +8,14 @@ while(have_posts()) {
   </section>
 
   <section class="page-content">
-    <div class="container">
+    <div class="container container--narrow page-section">
       <?php the_content(); ?>
 
     </div>
   </section>
 
     
-  <?php }
-
-
-get_footer();
- 
-?>
+  
+<?php get_footer(); ?>
 
 <p>to jest strona</p>

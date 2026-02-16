@@ -1,0 +1,139 @@
+.page-content {
+  padding: 3rem 0;
+  background-color: $bgWhite;
+
+  @include atMedium {
+    padding: 4rem 0;
+  }
+
+  @include atLarge {
+    padding: 5rem 0;
+  }
+
+  .container {
+    max-width: 800px; // Węższa szerokość dla lepszej czytelności treści
+  }
+
+  // Style dla paragrafów i tekstu
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: $darkGrey;
+    margin-bottom: 1.5rem;
+
+    @include atMedium {
+      font-size: 1.1rem;
+    }
+  }
+
+  // Style dla nagłówków w treści
+  h1, h2, h3, h4, h5, h6 {
+    color: $darkGreen;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid $lightGreen;
+    padding-bottom: 0.5rem;
+
+    @include atMedium {
+      font-size: 2.5rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: $darkGrey;
+
+    @include atMedium {
+      font-size: 1.75rem;
+    }
+  }
+
+  // Style dla list
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.8;
+      color: $darkGrey;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+
+    li::marker {
+      color: $lightGreen;
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  // Style dla linków w treści
+  a {
+    color: $darkGreen;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $lightGreen;
+    }
+  }
+
+  // Style dla cytatów
+  blockquote {
+    border-left: 4px solid $lightGreen;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: $lightGrey;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+
+  // Style dla obrazów w treści
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  // Style dla tabel
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: $white;
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: $lightGreen;
+      color: $white;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+  }
+}

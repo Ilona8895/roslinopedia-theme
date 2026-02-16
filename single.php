@@ -1,13 +1,28 @@
-<?php get_header();
+<?php get_header(); ?>
 
-while(have_posts()) {
-    the_post(); ?>
-    <h2><?php the_title(); ?></h2>
-    <?php the_content(); ?>
-  <?php }
+<section class="page-banner" style="background-image: url('<?php echo get_theme_file_uri('/images/banner.jpg') ?>')">
+    <div class="page-banner__overlay"></div>
+    <div class="page-banner__content">
+      <h1 class="page-banner__title"><?php the_title() ?></thead></h1>
+    </div>
+  </section>
 
-get_footer();
 
-?>
+  <section class="page-content">
+  <div class="container container--narrow page-section">
 
-<p>to jest pojedynczy wpis blogowy</p>
+
+      <div class="metabox">
+        <p>Opublikowano przez <?php the_author_posts_link(); ?> <?php the_time('F j, Y'); ?> w kategorii <?php echo get_the_category_list(', '); ?></p>
+      </div>
+
+
+
+      <?php the_content(); ?>
+    </div>
+  </section>
+
+<?php get_footer(); ?>
+
+
+

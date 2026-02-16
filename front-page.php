@@ -84,7 +84,7 @@
         </div>
       </div>
       <div class="blog-section__cta">
-        <a href="#" class="btn btn--green btn--large">Zobacz więcej</a>
+        <a href="<?php echo site_url('/blog') ?>" class="btn btn--green btn--large">Zobacz więcej</a>
       </div>
     </div>
   </section>
