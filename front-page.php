@@ -12,42 +12,34 @@
       <h2 class="plant-database__title">Baza roślin</h2>
       <div class="plant-database__grid">
 
+      <?php
+      $homepagePlants = new WP_Query(array(
+        'posts_per_page' => 4,
+        'post_type' => 'roslina'
+      ));
+
+      while($homepagePlants->have_posts()) {
+        $homepagePlants->the_post(); ?>
+
+
         <div class="plant-card">
-          <a href="plant-single.html">
+          <a href="<?php the_permalink(); ?>">
             <div class="plant-card__image-wrapper">
               <img src="<?php echo get_theme_file_uri('/images/hortensja.jpg') ?>" alt="Hortensja" class="plant-card__image" />
             </div>
-            <h3 class="plant-card__name">Hortensja</h3>
-            <p class="plant-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3 class="plant-card__name"><?php the_title(); ?></h3>
+            <p class="plant-card__description"><?php if(has_excerpt()) {
+              echo get_the_excerpt();
+            } else {
+              echo wp_trim_words(get_the_content(), 18);
+            } ?></p>
           </a>
         </div>
-        <div class="plant-card">
-          <a href="plant-single.html">
-            <div class="plant-card__image-wrapper">
-              <img src="<?php echo get_theme_file_uri('/images/begonia.jpg') ?>" alt="Begonia" class="plant-card__image" />
-            </div>
-            <h3 class="plant-card__name">Begonia</h3>
-            <p class="plant-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </a>
-        </div>
-        <div class="plant-card">
-          <a href="plant-single.html">
-            <div class="plant-card__image-wrapper">
-              <img src="<?php echo get_theme_file_uri('/images/lawenda.jpg') ?>" alt="Lawenda Hidcote" class="plant-card__image" />
-            </div>
-            <h3 class="plant-card__name">Lawenda Hidcote</h3>
-            <p class="plant-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </a>
-        </div>
-        <div class="plant-card">
-          <a href="plant-single.html">
-            <div class="plant-card__image-wrapper">
-              <img src="<?php echo get_theme_file_uri('/images/szalwia.jpg') ?>" alt="Szałwia" class="plant-card__image" />
-            </div>
-            <h3 class="plant-card__name">Szałwia</h3>
-            <p class="plant-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </a>
-        </div>
+ 
+
+        <?php } ?>
+        <?php wp_reset_postdata(); ?>
+
       </div>
       <div class="plant-database__cta">
         <a href="plants.html" class="btn btn--green btn--large">Zobacz wszystkie rośliny</a>
