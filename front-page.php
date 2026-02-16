@@ -11,6 +11,7 @@
     <div class="container">
       <h2 class="plant-database__title">Baza roślin</h2>
       <div class="plant-database__grid">
+
         <div class="plant-card">
           <a href="plant-single.html">
             <div class="plant-card__image-wrapper">
@@ -56,32 +57,36 @@
 
   <section class="blog-section" id="blog">
     <div class="container">
+
       <h2 class="blog-section__title">Blog</h2>
       <div class="blog-section__grid">
+
+      <?php
+
+      $homepagePosts = new WP_Query(array(
+        'posts_per_page' => 3
+      ));
+
+      while($homepagePosts->have_posts()) {
+        $homepagePosts->the_post(); ?>
+
         <div class="blog-card">
-          <a href="#">
+          <a href="<?php the_permalink(); ?>">
             <img src="<?php echo get_theme_file_uri('/images/pole-lawendy.jpg') ?>" alt="Rośliny słoneczne" class="blog-card__image" />
             <div class="blog-card__content">
-              <h3 class="blog-card__title">Rośliny, które pokochają słońce – najlepsze gatunki do nasłonecznionych ogrodów</h3>
+              <h3 class="blog-card__title"><?php the_title(); ?></h3>
+              <p><?php if(has_excerpt()) {
+                echo get_the_excerpt();
+              } else {
+                echo wp_trim_words(get_the_content(), 18);
+              } ?></p>
             </div>
           </a>
         </div>
-        <div class="blog-card">
-          <a href="#">
-            <img src="<?php echo get_theme_file_uri('/images/kwiaty.jpg') ?>" alt="Kalendarz kwitnienia" class="blog-card__image" />
-            <div class="blog-card__content">
-              <h3 class="blog-card__title">Kalendarz kwitnienia – jak zaplanować ogród, który kwitnie przez cały sezon</h3>
-            </div>
-          </a>
-        </div>
-        <div class="blog-card">
-          <a href="#">
-            <img src="<?php echo get_theme_file_uri('/images/pszczolawkwiatach.jpg') ?>" alt="Rośliny miododajne" class="blog-card__image" />
-            <div class="blog-card__content">
-              <h3 class="blog-card__title">Rośliny miododajne – jak stworzyć ogród przyjazny pszczołom i motylom</h3>
-            </div>
-          </a>
-        </div>
+
+        <?php } ?>
+        <?php wp_reset_postdata(); ?>
+        
       </div>
       <div class="blog-section__cta">
         <a href="<?php echo site_url('/blog') ?>" class="btn btn--green btn--large">Zobacz więcej</a>
