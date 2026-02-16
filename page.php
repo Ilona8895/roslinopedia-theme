@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<?php
+  while(have_posts()) {
+    the_post(); ?>
+
 <section class="page-banner" style="background-image: url('<?php echo get_theme_file_uri('/images/banner.jpg') ?>')">
     <div class="page-banner__overlay"></div>
     <div class="page-banner__content">
@@ -10,12 +14,9 @@
   <section class="page-content">
     <div class="container container--narrow page-section">
       <?php the_content(); ?>
-
     </div>
   </section>
 
-    
-  
-<?php get_footer(); ?>
+<?php } ?>
 
-<p>to jest strona</p>
+<?php get_footer(); ?>
