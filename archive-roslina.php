@@ -15,7 +15,7 @@
       <div class="plant-list-item">
         <div class="plant-list-item__image-wrapper">
           <div class="plant-list-item__decorative-shape"></div>
-          <img src="images/hortensja.jpg" alt="Hortensja" class="plant-list-item__image" />
+          <?php the_post_thumbnail('full', array('class' => 'plant-list-item__image')); ?>
         </div>
         <div class="plant-list-item__content">
           <a href="<?php the_permalink(); ?>">

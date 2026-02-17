@@ -4,7 +4,7 @@
   while(have_posts()) {
     the_post(); ?>
 
-<section class="page-banner" style="background-image: url('<?php echo get_theme_file_uri('/images/banner.jpg') ?>')">
+<section class="page-banner" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
     <div class="page-banner__overlay"></div>
     <div class="page-banner__content">
       <h1 class="page-banner__title"><?php the_title(); ?></h1>
@@ -27,27 +27,27 @@
         <table class="plant-parameters__table">
           <tr>
             <th>Okres kwitnienia</th>
-            <td>lipiec - październik</td>
+            <td><?php the_field('okres_kwitnienia'); ?></td>
           </tr>
           <tr>
             <th>Stanowisko</th>
-            <td>słoneczne, półcieniste</td>
+            <td><?php the_field('stanowisko'); ?></td>
           </tr>
           <tr>
             <th>Gleba</th>
-            <td>przepuszczalna</td>
+            <td><?php the_field('gleba'); ?></td>
           </tr>
           <tr>
             <th>Wysokość (cm)</th>
-            <td>200-300</td>
+            <td><?php the_field('wysokosc'); ?></td>
           </tr>
           <tr>
             <th>Podlewanie</th>
-            <td>umiarkowane</td>
+            <td><?php the_field('podlewanie'); ?></td>
           </tr>
           <tr>
             <th>Mrozoodporność</th>
-            <td>częściowa</td>
+            <td><?php the_field('mrozoodpornosc'); ?></td>
           </tr>
         </table>
       </div>

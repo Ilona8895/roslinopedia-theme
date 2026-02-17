@@ -15,7 +15,8 @@
       <?php
       $homepagePlants = new WP_Query(array(
         'posts_per_page' => 4,
-        'post_type' => 'roslina'
+        'post_type' => 'roslina',
+
       ));
 
       while($homepagePlants->have_posts()) {
@@ -25,7 +26,7 @@
         <div class="plant-card">
           <a href="<?php the_permalink(); ?>">
             <div class="plant-card__image-wrapper">
-              <img src="<?php echo get_theme_file_uri('/images/hortensja.jpg') ?>" alt="Hortensja" class="plant-card__image" />
+              <?php the_post_thumbnail('full', array('class' => 'plant-card__image')); ?>
             </div>
             <h3 class="plant-card__name"><?php the_title(); ?></h3>
             <p class="plant-card__description"><?php if(has_excerpt()) {
@@ -42,7 +43,7 @@
 
       </div>
       <div class="plant-database__cta">
-        <a href="plants.html" class="btn btn--green btn--large">Zobacz wszystkie rośliny</a>
+        <a href="<?php echo get_post_type_archive_link('roslina'); ?>" class="btn btn--green btn--large">Zobacz wszystkie rośliny</a>
       </div>
     </div>
   </section>
@@ -64,7 +65,7 @@
 
         <div class="blog-card">
           <a href="<?php the_permalink(); ?>">
-            <img src="<?php echo get_theme_file_uri('/images/pole-lawendy.jpg') ?>" alt="Rośliny słoneczne" class="blog-card__image" />
+          <?php the_post_thumbnail('full', array('class' => 'blog-card__image')); ?>
             <div class="blog-card__content">
               <h3 class="blog-card__title"><?php the_title(); ?></h3>
               <p><?php if(has_excerpt()) {

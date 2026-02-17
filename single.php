@@ -4,7 +4,7 @@
   while(have_posts()) {
     the_post(); ?>
 
-<section class="page-banner" style="background-image: url('<?php echo get_theme_file_uri('/images/banner.jpg') ?>')">
+<section class="page-banner" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
     <div class="page-banner__overlay"></div>
     <div class="page-banner__content">
       <h1 class="page-banner__title"><?php the_title(); ?></h1>

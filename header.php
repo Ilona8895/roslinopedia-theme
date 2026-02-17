@@ -21,12 +21,6 @@
 
           ));
           ?>
-          <!-- <ul>
-            <li><a href="<?php echo site_url('/o-mnie') ?>">O mnie</a></li>
-            <li><a href="<?php echo site_url('/baza-roslin') ?>">Baza roślin</a></li>
-            <li><a href="<?php echo site_url('/blog') ?>">Blog</a></li>
-            <li><a href="<?php echo site_url('/kontakt') ?>">Kontakt</a></li>
-          </ul> -->
         </nav>
       </div>
     </div>

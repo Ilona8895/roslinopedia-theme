@@ -20,7 +20,7 @@
         
       <div class="plant-list-item">
       <div class="blog-post-item__image-wrapper">
-          <img src="<?php echo get_theme_file_uri('images/pole-lawendy.jpg') ?>" alt="Rośliny, które pokochają słońce – najlepsze gatunki do nasłonecznionych ogrodów" class="blog-post-item__image" />
+        <?php the_post_thumbnail('full', array('class' => 'blog-post-item__image')); ?>
         </div>
 
         <div class="plant-list-item__content">

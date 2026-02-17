@@ -10,11 +10,9 @@
             <h4 class="site-footer__heading">Gleba</h4>
             <nav class="nav-list">
               <ul>
-                <li><a href="#" class="site-footer__link">Piaszczysta</a></li>
-                <li><a href="#" class="site-footer__link">Gliniasta</a></li>
-                <li><a href="#" class="site-footer__link">Próchnicza</a></li>
-                <li><a href="#" class="site-footer__link">Kwaśna</a></li>
-                <li><a href="#" class="site-footer__link">Wilgotna</a></li>
+                <?php wp_nav_menu(array(
+                  'theme_location' => 'footerMenuLocation',
+                )); ?>
               </ul>
             </nav>
           </div>
@@ -24,19 +22,17 @@
               <h3 class="site-footer__heading">Stanowisko</h3>
               <nav class="nav-list">
                 <ul>
-                  <li><a href="#" class="site-footer__link">Słoneczne</a></li>
-                  <li><a href="#" class="site-footer__link">Półcień</a></li>
-                  <li><a href="#" class="site-footer__link">Cień</a></li>
+                <?php wp_nav_menu(array(
+                  'theme_location' => 'footerMenuLocation2',
+                )); ?>
                 </ul>
               </nav>
               <h3 class="site-footer__heading">Typ rośliny</h3>
               <nav class="nav-list">
                 <ul>
-                  <li><a href="#" class="site-footer__link">Byliny</a></li>
-                  <li><a href="#" class="site-footer__link">Krzewy</a></li>
-                  <li><a href="#" class="site-footer__link">Drzewa</a></li>
-                  <li><a href="#" class="site-footer__link">Warzywa</a></li>
-                  <li><a href="#" class="site-footer__link">Owoc</a></li>
+                <?php wp_nav_menu(array(
+                  'theme_location' => 'footerMenuLocation3',
+                )); ?>
                 </ul>
               </nav>
             </div>
