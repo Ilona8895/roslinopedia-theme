@@ -1,5 +1,26 @@
 <?php
 
+
+function pageBanner($args = NULL){
+
+  if (!isset($args['title'])) {
+    $args['title'] = get_the_title();
+
+  }
+  if (!isset($args['photo'])) {
+    $args['photo'] = get_theme_file_uri('/images/banner.jpg');
+  }
+  ?>
+  <section class="page-banner" style="background-image: url('<?php echo $args['photo']; ?>'); ">
+    <div class="page-banner__overlay"></div>
+    <div class="page-banner__content">
+      <h1 class="page-banner__title"><?php echo $args['title']; ?></h1>
+    </div>
+  </section>
+ 
+    <?php
+}
+
 function roslinopedia_theme_files() {
   wp_enqueue_style('roslinopedia_main_styles', get_theme_file_uri('/build/style-index.css'));
   wp_enqueue_script('roslinopedia_main_js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
@@ -16,6 +37,7 @@ function roslinopedia_theme_features() {
 
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
+  add_image_size('bannerImage', 1500, 350, true); 
 }
 add_action('after_setup_theme', 'roslinopedia_theme_features');
 

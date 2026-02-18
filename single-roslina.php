@@ -2,14 +2,14 @@
 
 <?php
   while(have_posts()) {
-    the_post(); ?>
+    the_post(); 
+    
 
-<section class="page-banner" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
-    <div class="page-banner__overlay"></div>
-    <div class="page-banner__content">
-      <h1 class="page-banner__title"><?php the_title(); ?></h1>
-    </div>
-  </section>
+    pageBanner(array(
+      'photo' => get_the_post_thumbnail_url(get_the_ID(), 'bannerImage')
+    ));
+    ?>
+
 
   <section class="plant-single">
     <div class="container">

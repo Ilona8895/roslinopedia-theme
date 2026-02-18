@@ -1,11 +1,10 @@
-<?php get_header(); ?>
+<?php get_header(); 
 
-<section class="page-banner" style="background-image: url('<?php echo get_theme_file_uri('/images/banner.jpg') ?>')">
-    <div class="page-banner__overlay"></div>
-    <div class="page-banner__content">
-      <h1 class="page-banner__title"> Inspiracje dla Twojego ogrodu </h1>
-    </div>
-  </section>
+pageBanner(array(
+  'title' => 'Inspiracje dla Twojego ogrodu',
+));
+?>
+
 
   <section class="plant-database">
   <div class="container container--narrow page-section">
@@ -26,7 +25,11 @@
         <div class="plant-list-item__content">
           <a href="<?php the_permalink(); ?>">
             <h2 class="plant-list-item__name"><?php the_title(); ?></h2>
-            <p class="plant-list-item__description"><p><?php the_excerpt(); ?></p></p>
+            <p class="plant-list-item__description"><p><?php if(has_excerpt()) {
+              echo get_the_excerpt();
+            } else {
+              echo wp_trim_words(get_the_content(), 18);
+            } ?></p></p>
             <p><a class="btn btn--green" href="<?php the_permalink(); ?>">Czytaj dalej &raquo;</a></p>
           </a>
         </div>

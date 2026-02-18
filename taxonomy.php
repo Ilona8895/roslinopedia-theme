@@ -1,11 +1,9 @@
-<?php get_header(); ?>
+<?php get_header(); 
+pageBanner(array(
+  'title' => single_term_title('', false),
+));
+?>
 
-<section class="page-banner" style="background-image: url('<?php echo get_theme_file_uri('/images/banner.jpg') ?>')">
-    <div class="page-banner__overlay"></div>
-    <div class="page-banner__content">
-      <h1 class="page-banner__title"><?php single_term_title(); ?></h1>
-    </div>
-  </section>
 
   <section class="plant-database">
     <div class="container">
