@@ -11,6 +11,7 @@
       <a href="<?php echo site_url() ?>" class="site-header__logo">
         <img src="<?php echo get_theme_file_uri('/images/logo.png') ?>" alt="Roslinopedia">
       </a>
+
       <i class="site-header__menu-trigger fas fa-bars" aria-hidden="true"></i>
       <div class="site-header__menu">
         <nav class="main-navigation">
@@ -23,6 +24,10 @@
           ?>
         </nav>
       </div>
+
+      <button class="search-modal__trigger" aria-label="Otwórz wyszukiwarkę">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
   </header>
 

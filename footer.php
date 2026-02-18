@@ -67,7 +67,29 @@
         </div>
       </div>
     </div>
+
 </footer>
+
+  <div class="search-modal">
+      <div class="search-modal__overlay"></div>
+      <div class="search-modal__content">
+        <div class="search-modal__search-bar">
+          <i class="fas fa-search search-modal__icon"></i>
+          <input type="text" class="search-modal__input" placeholder="Wyszukaj">
+          <div class="spinner-loader"></div>
+          <i class="fas fa-window-close search-modal__close"></i>
+        </div>
+
+        <div class="search-modal__results">   
+          <div class="search-modal__results-item">
+          
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+
 
 <?php wp_footer(); ?>
 </body>
