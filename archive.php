@@ -6,7 +6,7 @@ pageBanner(array(
 
 
   <section class="plant-database">
-  <div class="container container--narrow page-section">
+  <div class="container">
 
     <?php
     while(have_posts()) {

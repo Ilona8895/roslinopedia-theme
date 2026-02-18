@@ -8,7 +8,7 @@
     ?>
 
 
-  <section class="page-content">
+  <section class="plant-database">
     <div class="container container--narrow page-section">
       <?php the_content(); ?>
     </div>
