@@ -81,9 +81,7 @@
         </div>
 
         <div class="search-modal__results">   
-          <div class="search-modal__results-item">
-          
-          </div>
+
         </div>
 
       </div>
