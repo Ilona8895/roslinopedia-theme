@@ -73,8 +73,12 @@ class Search {
         data.forEach(item => { 
           const resultsItem = document.createElement('div');
           resultsItem.classList.add('search-modal__results-item');
-          resultsItem.innerHTML = `<a href="${item.link}"><h3>${item.title.rendered}</h3></a>
-          <p>${item.content.rendered.substring(0, 100)}...</p>`;
+          resultsItem.innerHTML = `
+          <div class="search-modal__results-content">
+            <a href="${item.link}"><h3>${item.title.rendered}</h3></a>
+            ${item.content.rendered.substring(0, 100)}...
+          </div>
+          <img class="search-modal__results-image" src="${item.featuredImageUrl}" alt="${item.title.rendered}">`;
           this.results.appendChild(resultsItem);
         });
       }

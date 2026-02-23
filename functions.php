@@ -1,25 +1,53 @@
 <?php
 
+require_once get_theme_file_path('/inc/page-banner.php');
+require_once get_theme_file_path('/inc/custom-queries.php');
 
-function pageBanner($args = NULL){
 
-  if (!isset($args['title'])) {
-    $args['title'] = get_the_title();
+function roslinopediaSearchResults($data) {
+  
+  $query = new WP_Query(array(
+    'post_type' =>  array('roslina', 'post'),
+    's' => sanitize_text_field($data['search'])
+  ));
 
+  $results = array();
+
+
+  while($query->have_posts()) {
+    $query->the_post();
+    $results[] = array(
+      'title' => get_the_title(),
+      'permalink' => get_the_permalink(),
+      'featuredImageUrl' => get_the_post_thumbnail_url(get_the_ID(), 'full')
+    );
   }
-  if (!isset($args['photo'])) {
-    $args['photo'] = get_theme_file_uri('/images/banner.jpg');
-  }
-  ?>
-  <section class="page-banner" style="background-image: url('<?php echo $args['photo']; ?>'); ">
-    <div class="page-banner__overlay"></div>
-    <div class="page-banner__content">
-      <h1 class="page-banner__title"><?php echo $args['title']; ?></h1>
-    </div>
-  </section>
- 
-    <?php
+
+  return $results;
+
 }
+
+
+function roslinopedia_custom_rest() {
+  register_rest_field('roslina', 'featuredImageUrl', array(
+    'get_callback' => function() {
+      return get_the_post_thumbnail_url(get_the_ID(), 'full');
+    }
+  ));
+  register_rest_field('post', 'featuredImageUrl', array(
+    'get_callback' => function() {
+      return get_the_post_thumbnail_url(get_the_ID(), 'full');
+    }
+  ));
+
+  register_rest_route('roslinopedia/v1', 'get', array(
+    'methods' => WP_REST_SERVER::READABLE,
+    'callback' => 'roslinopediaSearchResults'
+  ));
+
+
+}
+add_action('rest_api_init', 'roslinopedia_custom_rest');
 
 function roslinopedia_theme_files() {
   wp_enqueue_style('roslinopedia_main_styles', get_theme_file_uri('/build/style-index.css'));
@@ -46,13 +74,3 @@ function roslinopedia_theme_features() {
 add_action('after_setup_theme', 'roslinopedia_theme_features');
 
 
-function roslinopedia_adjust_queries($query) {
-  if (!is_admin() && (is_post_type_archive('roslina') || is_tax('typ') || is_tax('stanowisko') || is_tax('gleba')) && $query->is_main_query()) {
-    $query->set('orderby', 'title');
-    $query->set('order', 'ASC');
-  }
-}
-
-
-
-add_action('pre_get_posts', 'roslinopedia_adjust_queries');
