@@ -2,30 +2,8 @@
 
 require_once get_theme_file_path('/inc/page-banner.php');
 require_once get_theme_file_path('/inc/custom-queries.php');
+require_once get_theme_file_path('/inc/custom_rest_queries.php');
 
-
-function roslinopediaSearchResults($data) {
-  
-  $query = new WP_Query(array(
-    'post_type' =>  array('roslina', 'post'),
-    's' => sanitize_text_field($data['search'])
-  ));
-
-  $results = array();
-
-
-  while($query->have_posts()) {
-    $query->the_post();
-    $results[] = array(
-      'title' => get_the_title(),
-      'permalink' => get_the_permalink(),
-      'featuredImageUrl' => get_the_post_thumbnail_url(get_the_ID(), 'full')
-    );
-  }
-
-  return $results;
-
-}
 
 
 function roslinopedia_custom_rest() {
