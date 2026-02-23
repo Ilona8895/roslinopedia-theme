@@ -18,7 +18,7 @@ class Search {
     this.openButton?.addEventListener('click', () => this.openModal());
     this.closeButton?.addEventListener('click', () => this.closeModal());
     this.overlay?.addEventListener('click', () => this.closeModal());
-    this.input?.addEventListener('input', () => {this.handleSearch(); this.showLoader();});
+    this.input?.addEventListener('input', () => this.handleSearch());
   }
 
   openModal() {
@@ -30,7 +30,6 @@ class Search {
   closeModal() {
     this.modal?.classList.remove('search-modal--active');
     document.documentElement.classList.remove('body-no-scroll');
-    this.spinnerLoader?.classList.remove('spinner-loader--active');
     if (this.results)
       this.results.innerHTML = '';
     if (this.input)
@@ -39,6 +38,7 @@ class Search {
   }
 
   handleSearch() {
+    this.spinnerLoader?.classList.add('spinner-loader--active');
     if (this.results)
       this.results.innerHTML = '';
     clearTimeout(this.typingTimeout);
@@ -46,10 +46,12 @@ class Search {
   }
 
   showResults() {
-    this.spinnerLoader?.classList.remove('spinner-loader--active');
-   
+ 
     if(this.input?.value) {
       this.fetchResults();
+    }
+    else {
+      this.spinnerLoader.classList.remove('spinner-loader--active');
     }
 
 
@@ -58,9 +60,10 @@ class Search {
   async fetchResults() {
     const term = encodeURIComponent(this.input?.value || '');
 
-    const response = await fetch(this.searchUrl + '?search=' + term);
-    const data = await response.json();
-    const { plants = [], posts = [] } = data;
+    try {
+        const response = await fetch(this.searchUrl + '?search=' + term);
+        const data = await response.json();
+        const { plants = [], posts = [] } = data;
 
         if(plants.length === 0 && posts.length === 0){
           this.showResultsHeading('Nie znaleziono wyników');
@@ -78,7 +81,13 @@ class Search {
           this.showResultsHeading('Wpisy blogowe');
           this.showResultsItems(posts);
         }
-
+    } catch (error) {
+      console.error(error);
+      this.showResultsHeading('Wystąpił błąd podczas ładowania wyników');
+    }
+    finally {
+      this.spinnerLoader?.classList.remove('spinner-loader--active');
+    }
   }
 
   showResultsHeading(heading) {
@@ -102,10 +111,6 @@ class Search {
     });
   }
 
-  showLoader() {
-    this.spinnerLoader?.classList.add('spinner-loader--active');
-        
-  }
 }
 
 export default Search
