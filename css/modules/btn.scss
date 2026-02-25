@@ -25,6 +25,26 @@
     }
   }
 
+  &--dark-green {
+    background-color: $darkGreen;
+    color: $white;
+
+    &:hover {
+      background-color: darken($darkGreen, 10%);
+      color: $white;
+    }
+  }
+
+  &--dark-grey {
+    background-color: $darkGrey;
+    color: $white;
+
+    &:hover {
+      background-color: darken($darkGrey, 10%);
+      color: $white;
+    }
+  }
+
   &--large {
     padding: 15px 40px;
     font-size: 1.1rem;

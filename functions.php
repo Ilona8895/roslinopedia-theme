@@ -52,3 +52,42 @@ function roslinopedia_theme_features() {
 add_action('after_setup_theme', 'roslinopedia_theme_features');
 
 
+add_action('admin_init', 'redirectSubsToFrontend');
+
+function redirectSubsToFrontend() {
+  $ourCurrentUser = wp_get_current_user();
+
+  if (count($ourCurrentUser->roles) == 1 AND $ourCurrentUser->roles[0] == 'subscriber') {
+    wp_redirect(site_url('/'));
+    exit;
+  }
+}
+
+add_action('wp_loaded', 'noSubsAdminBar');
+
+function noSubsAdminBar() {
+  $ourCurrentUser = wp_get_current_user();
+
+  if (count($ourCurrentUser->roles) == 1 AND $ourCurrentUser->roles[0] == 'subscriber') {
+    show_admin_bar(false);
+  }
+}
+
+
+// Własny wygląd strony logowania 
+function roslinopedia_login_styles() {
+  wp_enqueue_style('roslinopedia_login_styles', get_theme_file_uri('/build/style-index.css'));
+
+}
+add_action('login_enqueue_scripts', 'roslinopedia_login_styles');
+
+function roslinopedia_login_logo_url() {
+  return esc_url(site_url());
+}
+add_filter('login_headerurl', 'roslinopedia_login_logo_url');
+
+function roslinopedia_login_logo_title() {
+  return get_bloginfo('name');
+}
+add_filter('login_headertext', 'roslinopedia_login_logo_title');
+

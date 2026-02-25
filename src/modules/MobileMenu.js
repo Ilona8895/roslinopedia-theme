@@ -2,7 +2,8 @@ class MobileMenu {
   constructor() {
     this.menu = document.querySelector(".site-header__menu")
     this.openButton = document.querySelector(".site-header__menu-trigger")
-    if (!this.menu || !this.openButton) return
+    this.openButtonIcon = this.openButton?.querySelector("i")
+    if (!this.menu || !this.openButton || !this.openButtonIcon) return
     this.events()
   }
 
@@ -18,18 +19,18 @@ class MobileMenu {
   openMenu() {
     this.menu.classList.toggle("site-header__menu--active")
     if (this.menu.classList.contains("site-header__menu--active")) {
-      this.openButton.classList.remove("fa-bars")
-      this.openButton.classList.add("fa-times")
+      this.openButtonIcon.classList.remove("fa-bars")
+      this.openButtonIcon.classList.add("fa-times")
     } else {
-      this.openButton.classList.remove("fa-times")
-      this.openButton.classList.add("fa-bars")
+      this.openButtonIcon.classList.remove("fa-times")
+      this.openButtonIcon.classList.add("fa-bars")
     }
   }
 
   closeMenu() {
     this.menu.classList.remove("site-header__menu--active")
-    this.openButton.classList.remove("fa-times")
-    this.openButton.classList.add("fa-bars")
+    this.openButtonIcon.classList.remove("fa-times")
+    this.openButtonIcon.classList.add("fa-bars")
   }
 }
 

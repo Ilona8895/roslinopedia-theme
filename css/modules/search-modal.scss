@@ -138,28 +138,6 @@
   
 
   
-    // Element - przycisk otwierający (w headerze)
-    &__trigger {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      color: $darkGreen;
-      cursor: pointer;
-      padding: 0.5rem;
-      transition: color 0.3s ease, transform 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-  
-      &:hover {
-        color: $oliveGreen;
-        transform: scale(1.05);
-      }
-  
-      &:active {
-        transform: scale(0.95);
-      }
-    }
 
     &__results {
       overflow-y: auto;

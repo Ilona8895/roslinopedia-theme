@@ -31,7 +31,7 @@
 
     img {
       height: auto;
-      max-height: 100px;
+      max-height: 60px;
       width: auto;
       display: block;
 
@@ -44,6 +44,23 @@
       }
     }
   }
+
+  &__right-column {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+
+    @include atMedium {
+      gap: 50px;
+    }
+
+    @include atLarge {
+      gap: 100px;
+    }
+  }
+
 
   &__menu {
     padding-right: 20px;
@@ -96,29 +113,42 @@
     }
   }
 
+  &__buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+  }
+
+  &__user {
+    display: flex;
+    gap: 0;
+    align-items: center;
+  }
+
+  &__avatar {
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+  
+    img {
+      display: block;
+      width: 34px;
+      height: 34px;
+      border-radius: 0 5px 5px 0;
+
+    }
+  }
+
+
   &__menu-trigger {
     display: none !important;
-    color: $white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding-right: 20px;
     z-index: 4;
-    position: relative;
-    transition: transform 0.3s ease;
-
-    @include atMedium {
-      padding-right: 40px;
-    }
 
     @media (max-width: 959px) {
       display: block !important;
     }
-
-    // Change icon when menu is active
-    .site-header__menu--active ~ & {
-      @media (max-width: 959px) {
-        // Icon will be changed via JS
-      }
-    }
+  
   }
 }
