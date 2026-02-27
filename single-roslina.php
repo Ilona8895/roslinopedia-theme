@@ -67,7 +67,55 @@
           </tr>
         </table>
       </div>
+
+      <?php if(is_user_logged_in()) { ?>
+      <div class="plant-single__notes">
+        <?php 
+        $notes = new WP_Query(array(
+          'post_type' => 'notatka',
+          'posts_per_page' => -1,
+          'orderby' => 'title',
+          'order' => 'ASC',
+          'meta_query' => array(
+            array(
+              'key' => 'powiazana_roslina',
+              'value' => '"' . get_the_ID() . '"',
+              'compare' => 'LIKE',
+            ),
+          ),
+          'author' => get_current_user_id(),
+        ));
+
+        if(!$notes->have_posts()) { ?>
+          <h3 class="plant-single__header">Nie ma żadnych notatek dla tej rośliny.</h3>
+          <button class="btn btn--dark-grey btn--small">Dodaj notatkę</button>
+        <?php } else {  
+          while($notes->have_posts()) {
+            $notes->the_post();
+            ?>
+            <div class="note">
+              <div class="note__header">
+                <h3 class="note__title"><?php the_title(); ?></h3>
+                <button class="btn btn--icon btn--green"><i class="fas fa-edit"></i></button>
+                <button class="btn btn--icon btn--danger"><i class="fas fa-trash"></i></button>
+              </div>
+              <div class="note__content"><?php the_content(); ?></div>         
+            </div>
+            <?php
+          }
+          ?>
+          <button class="btn btn--dark-grey btn--small">Dodaj notatkę</button>
+          <?php
+          
+        }
+        wp_reset_postdata();
+        
+        ?>
+        </div>
+        <?php } ?>
+
     </div>
+    
   </section>
 
 <?php } ?>

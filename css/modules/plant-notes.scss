@@ -1,0 +1,31 @@
+.plant-single__notes {
+    margin-top: 3rem;
+    padding: 2rem 0;
+  }
+  
+  .note {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    border-left: 3px solid $lightGreen;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+    &__title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $darkGreen;
+      margin-bottom: 0.5rem;
+    }
+  
+    &__content {
+      color: $darkGrey;
+      line-height: 1.6;
+    }
+  }

@@ -54,4 +54,24 @@
     padding: 8px 20px;
     font-size: 0.9rem;
   }
+
+  &--icon {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  &--danger{
+    background-color: $danger;
+    color: $white;
+
+    &:hover {
+      background-color: darken($danger, 10%);
+      color: $white;
+    }
+  }
 }
