@@ -34,7 +34,7 @@ html {
 
 body {
   color: $darkGrey;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: $fontSecondary;
   overflow-x: hidden;
   position: relative;
   margin: 0;
@@ -70,6 +70,12 @@ li {
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1rem 0;
   font-weight: 600;
+  font-family: $fontPrimary;
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 /* Make Top WP Admin Bar Fixed on Mobile */

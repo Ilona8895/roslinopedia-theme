@@ -65,6 +65,10 @@
     
   }
 
+  &--hidden {
+    display: none;
+  }
+
   &--danger{
     background-color: $danger;
     color: $white;

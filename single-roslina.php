@@ -74,43 +74,46 @@
         $notes = new WP_Query(array(
           'post_type' => 'notatka',
           'posts_per_page' => -1,
-          'orderby' => 'title',
-          'order' => 'ASC',
           'meta_query' => array(
+            'relation' => 'OR',
             array(
               'key' => 'powiazana_roslina',
               'value' => '"' . get_the_ID() . '"',
               'compare' => 'LIKE',
             ),
+            array(
+              'key' => 'powiazana_roslina',
+              'value' => get_the_ID(),
+              'compare' => '=',
+            ),
           ),
           'author' => get_current_user_id(),
         ));
 
-        if(!$notes->have_posts()) { ?>
-          <h3 class="plant-single__header">Nie ma żadnych notatek dla tej rośliny.</h3>
-          <button class="btn btn--dark-grey btn--small">Dodaj notatkę</button>
-        <?php } else {  
+   
           while($notes->have_posts()) {
             $notes->the_post();
             ?>
-            <div class="note">
+            <div class="note" note-id="<?php the_ID(); ?>">
               <div class="note__header">
-                <h3 class="note__title"><?php the_title(); ?></h3>
-                <button class="btn btn--icon btn--green"><i class="fas fa-edit"></i></button>
-                <button class="btn btn--icon btn--danger"><i class="fas fa-trash"></i></button>
+                <input readonly type="text" class="note__title" value="<?php esc_attr(the_title()); ?>">
+                <button class="btn btn--icon btn--green note__edit-button"><i class="fas fa-edit"></i></button>
+                <button class="btn btn--icon btn--green btn--hidden note__save-button"><i class="fas fa-save"></i></button>
+                <button class="btn btn--icon btn--danger note__delete-button" data-id="<?php the_ID(); ?>"><i class="fas fa-trash"></i></button>
               </div>
-              <div class="note__content"><?php the_content(); ?></div>         
+              <textarea class="note__content" readonly><?php echo esc_attr(wp_strip_all_tags(get_the_content())); ?></textarea>         
             </div>
             <?php
           }
+          wp_reset_postdata();
           ?>
-          <button class="btn btn--dark-grey btn--small">Dodaj notatkę</button>
-          <?php
+          <div class="new_note" plant-id="<?php the_ID(); ?>">
+              <h3 class="new_note__header">Dodaj nową notatkę</h3>
+              <input type="text" class="new_note__title" placeholder="Tytuł notatki" value="">
+              <textarea class="new_note__content" placeholder="Treść notatki" value=""></textarea>  
+              <button class="btn btn--dark-grey btn--small note__add-button">Dodaj notatkę</button>       
+          </div>
           
-        }
-        wp_reset_postdata();
-        
-        ?>
         </div>
         <?php } ?>
 

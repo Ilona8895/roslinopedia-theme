@@ -22,10 +22,81 @@
       font-weight: 600;
       color: $darkGreen;
       margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      
+      background-color: transparent;
+      border: none;
+      outline: none; 
+      width: 100%;
+  
     }
   
     &__content {
       color: $darkGrey;
       line-height: 1.6;
+
+      background-color: transparent;
+      outline: none; 
+      border: none;
+      width: 100%;
+      height: 100%;
+      resize: none;
+      
+ 
+    }
+
+    &__edit{
+      outline: 1px solid $lightGreen;  
+      border-radius: 5px;
+      resize: vertical;
+
+    }
+  }
+
+  .new_note {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+    align-items: center;
+
+    
+
+    &__header {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $darkGreen;  
+      margin-bottom: 1rem;
+    }
+
+    &__title {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid $lightGrey;
+      outline: none;
+
+
+      &:focus {
+        border: 1px solid $lightGreen;
+      };
+    }
+
+    &__content {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid $lightGrey;
+      outline: none;
+      resize: vertical;
+
+      &:focus {
+        border: 1px solid $lightGreen;
+      };
+      
     }
   }
