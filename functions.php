@@ -66,7 +66,7 @@ function redirectSubsToFrontend() {
   }
 }
 
-add_action('wp_loaded', 'noSubsAdminBar');
+
 
 function noSubsAdminBar() {
   $ourCurrentUser = wp_get_current_user();
@@ -75,6 +75,7 @@ function noSubsAdminBar() {
     show_admin_bar(false);
   }
 }
+add_action('wp_loaded', 'noSubsAdminBar');
 
 
 // Własny wygląd strony logowania 
@@ -94,3 +95,15 @@ function roslinopedia_login_logo_title() {
 }
 add_filter('login_headertext', 'roslinopedia_login_logo_title');
 
+// Force note posts to be private
+function makeNotePrivate($data) {
+
+
+  if($data['post_type'] === 'notatka' && $data['post_status'] !== 'trash') {
+    $data['post_status'] = "private";
+  }
+  
+  return $data;
+}
+
+add_filter('wp_insert_post_data', 'makeNotePrivate');

@@ -96,12 +96,12 @@
             ?>
             <div class="note" note-id="<?php the_ID(); ?>">
               <div class="note__header">
-                <input readonly type="text" class="note__title" value="<?php esc_attr(the_title()); ?>">
+                <input readonly type="text" class="note__title" value="<?php echo str_replace('Prywatne: ', '', esc_attr(get_the_title())); ?>">
                 <button class="btn btn--icon btn--green note__edit-button"><i class="fas fa-edit"></i></button>
                 <button class="btn btn--icon btn--green btn--hidden note__save-button"><i class="fas fa-save"></i></button>
                 <button class="btn btn--icon btn--danger note__delete-button" data-id="<?php the_ID(); ?>"><i class="fas fa-trash"></i></button>
               </div>
-              <textarea class="note__content" readonly><?php echo esc_attr(wp_strip_all_tags(get_the_content())); ?></textarea>         
+              <textarea class="note__content" readonly><?php echo esc_textarea(wp_strip_all_tags(get_the_content())); ?></textarea>         
             </div>
             <?php
           }

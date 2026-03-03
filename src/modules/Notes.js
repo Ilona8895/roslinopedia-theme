@@ -28,7 +28,7 @@ class Notes {
     this.sendRequest(null, 'POST', {
       title: document.querySelector('.new_note__title').value,
       content: document.querySelector('.new_note__content').value,
-      status: 'publish',
+      status: 'private',
       acf: {
         powiazana_roslina: [parseInt(bindPlantId, 10)]
       }

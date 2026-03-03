@@ -1,5 +1,4 @@
 .plant-single__notes {
-    margin-top: 3rem;
     padding: 2rem 0;
   }
   
@@ -9,6 +8,11 @@
     margin-bottom: 1.5rem;
     border-radius: 5px;
     border-left: 3px solid $lightGreen;
+
+    @include atMedium {
+      margin: 1.5rem;
+
+    }
 
     &__header {
       display: flex;
@@ -54,7 +58,7 @@
   }
 
   .new_note {
-    margin-top: 2rem;
+    // margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
