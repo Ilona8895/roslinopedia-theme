@@ -3,11 +3,11 @@
   }
   
   .note {
-    background: #f9f9f9;
+    background: var(--color-background-alt);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 5px;
-    border-left: 3px solid $lightGreen;
+    border-left: 3px solid var(--color-secondary);
 
     @include atMedium {
       margin: 1.5rem;
@@ -24,7 +24,7 @@
     &__title {
       font-size: 1.2rem;
       font-weight: 600;
-      color: $darkGreen;
+      color: var(--color-primary);
       margin-bottom: 0.5rem;
       padding: 0.5rem;
       
@@ -36,7 +36,7 @@
     }
   
     &__content {
-      color: $darkGrey;
+      color: var(--color-text);
       line-height: 1.6;
 
       background-color: transparent;
@@ -50,7 +50,7 @@
     }
 
     &__edit{
-      outline: 1px solid $lightGreen;  
+      outline: 1px solid var(--color-secondary);  
       border-radius: 5px;
       resize: vertical;
 
@@ -73,7 +73,7 @@
     &__header {
       font-size: 1.2rem;
       font-weight: 600;
-      color: $darkGreen;  
+      color: var(--color-primary);  
       margin-bottom: 1rem;
     }
 
@@ -81,12 +81,12 @@
       width: 100%;
       padding: 1rem;
       border-radius: 5px;
-      border: 1px solid $lightGrey;
+      border: 1px solid var(--color-text-muted);
       outline: none;
 
 
       &:focus {
-        border: 1px solid $lightGreen;
+        border: 1px solid var(--color-secondary);
       };
     }
 
@@ -94,12 +94,12 @@
       width: 100%;
       padding: 1rem;
       border-radius: 5px;
-      border: 1px solid $lightGrey;
+      border: 1px solid var(--color-text-muted);
       outline: none;
       resize: vertical;
 
       &:focus {
-        border: 1px solid $lightGreen;
+        border: 1px solid var(--color-secondary);
       };
       
     }

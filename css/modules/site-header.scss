@@ -79,7 +79,7 @@
       left: 0;
       right: 0;
       max-height: 70vh;
-      background-color: rgba(90, 124, 74, 0.98); // $darkGreen
+      background-color: rgba(var(--color-primary-rgb), 0.98);
       padding: 80px 24px 32px;
       z-index: 2;
       display: flex;
@@ -90,7 +90,7 @@
       transform: translateY(-100%);
       transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
       overflow-y: auto;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 24px var(--color-black);
     }
 
     // Active state - show menu (wyjeżdża z góry)

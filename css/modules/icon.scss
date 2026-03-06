@@ -23,10 +23,10 @@
 
 .site-header .icon-link,
 .site-header .icon-button {
-  color: $white;
+  color: var(--color-white);
 
   &:hover {
-    color: $lightGreen;
+    color: var(--color-secondary);
     transform: scale(1.08);
   }
 }

@@ -16,32 +16,32 @@
   }
 
   &--green {
-    background-color: $lightGreen;
-    color: $white;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
 
     &:hover {
-      background-color: darken($lightGreen, 10%);
-      color: $white;
+      background-color: color-mix(in srgb, var(--color-secondary) 90%, black);
+      color: var(--color-white);
     }
   }
 
   &--dark-green {
-    background-color: $darkGreen;
-    color: $white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
 
     &:hover {
-      background-color: darken($darkGreen, 10%);
-      color: $white;
+      background-color: color-mix(in srgb, var(--color-primary) 90%, black);
+      color: var(--color-white);
     }
   }
 
   &--dark-grey {
-    background-color: $darkGrey;
-    color: $white;
+    background-color: var(--color-text);
+    color: var(--color-white);
 
     &:hover {
-      background-color: darken($darkGrey, 10%);
-      color: $white;
+      background-color: color-mix(in srgb, var(--color-text) 90%, black);
+      color: var(--color-white);
     }
   }
 
@@ -70,12 +70,12 @@
   }
 
   &--danger{
-    background-color: $danger;
-    color: $white;
+    background-color: var(--color-danger);
+    color: var(--color-white);
 
     &:hover {
-      background-color: darken($danger, 10%);
-      color: $white;
+      background-color: color-mix(in srgb, var(--color-danger) 90%, black);
+      color: var(--color-white);
     }
   }
 }

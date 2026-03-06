@@ -21,18 +21,18 @@
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid $lightGreen;
+    border: 2px solid var(--color-secondary);
   }
 
   &__name {
     font-size: 1.5rem;
     font-weight: 600;
-    color: $darkGrey;
+    color: var(--color-text);
     margin-bottom: 0.5rem;
   }
 
   &__description {
-    color: $lightGrey;
+    color: var(--color-text-muted);
     font-size: 0.9rem;
     line-height: 1.6;
     max-width: 100%;

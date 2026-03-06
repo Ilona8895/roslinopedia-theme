@@ -5,7 +5,7 @@
 
 
   &__header {
-    color: $darkGreen;
+    color: var(--color-primary);
     margin-bottom: 2rem;
 
 
@@ -16,7 +16,7 @@
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    color: $darkGrey;
+    color: var(--color-text);
 
     @include atLarge {
       flex-direction: row;

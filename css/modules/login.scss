@@ -1,23 +1,23 @@
 
 body.login {
-    background-color: $bgLightGreen;
+    background-color: var(--color-secondary);
   }
   
 
   body.login input:focus {
-    border-color: $darkGreen;
-    box-shadow: 0 0 0 1px $darkGreen;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
   }
   
 
   body.login #wp-submit {
-    background: $darkGreen;
+    background: var(--color-primary);
     border: none;
 
   }
 
   body.login .message {
-    border-left-color: $darkGreen;
+    border-left-color: var(--color-primary);
   }
 
   .login h1 a {

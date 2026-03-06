@@ -1,12 +1,12 @@
 .plant-database {
   padding: 4rem 0;
-  background-color: #f9f9f9;
+  background-color: var(--color-background-alt);
 
   &__title {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
-    color: $darkGrey;
+    color: var(--color-text);
     margin-bottom: 3rem;
     position: relative;
 
@@ -15,7 +15,7 @@
       display: block;
       width: 80px;
       height: 3px;
-      background-color: $lightGreen;
+      background-color: var(--color-secondary);
       margin: 15px auto 0;
     }
   }

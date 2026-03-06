@@ -95,7 +95,7 @@ function roslinopedia_login_logo_title() {
 }
 add_filter('login_headertext', 'roslinopedia_login_logo_title');
 
-// Force note posts to be private
+// Prywatne notatki
 function makeNotePrivate($data) {
 
 

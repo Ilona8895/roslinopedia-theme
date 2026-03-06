@@ -1,12 +1,11 @@
-// Osobne style dla wpisów blogowych - prostokątne obrazy, większe
+
 .blog-post-item {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 4rem;
   padding-bottom: 3rem;
-  border-bottom: 2px solid #eee;
-
+  border-bottom: 2px solid var(--color-border);
   @include atMedium {
     flex-direction: row;
     align-items: flex-start;
@@ -61,7 +60,7 @@
   &__name {
     font-size: 1.75rem;
     font-weight: 600;
-    color: $darkGrey;
+    color: var(--color-text);
     margin-bottom: 1rem;
     line-height: 1.3;
 
@@ -71,7 +70,7 @@
   }
 
   &__description {
-    color: $lightGrey;
+    color: var(--color-text-muted);
     line-height: 1.7;
     font-size: 1rem;
     margin-bottom: 1.5rem;

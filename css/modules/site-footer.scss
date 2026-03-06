@@ -1,7 +1,7 @@
 .site-footer {
   padding: 3rem 0 1rem;
-  background-color: $lightGreen;
-  color: $white;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
 
 
   // Flexbox na .group dla układu 3 kolumn
@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: $white;
+    color: var(--color-white);
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -30,7 +30,7 @@
 
     &:hover {
       text-decoration: none;
-      color: $white;
+      color: var(--color-white);
     }
 
     img {
@@ -42,7 +42,7 @@
     &-icon {
       width: 20px;
       height: 20px;
-      fill: $white;
+      fill: var(--color-white);
     }
   }
 
@@ -85,7 +85,7 @@
   &__col-four {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--color-border);
     margin-top: 0;
 
     @include atLarge {
@@ -101,18 +101,18 @@
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: $white;
+    color: var(--color-white);
   }
 
   &__link {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-white);
     text-decoration: none;
     display: block;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $white;
+      color: var(--color-white);
       text-decoration: underline;
     }
   }
@@ -122,7 +122,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 0.8rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-white);
 
     i {
       width: 20px;
@@ -133,13 +133,13 @@
   &__bottom {
     margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
     gap: 1rem;
     text-align: center;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-white);
 
     @include atMedium {
       flex-direction: row;
@@ -174,7 +174,7 @@
   }
 
   a {
-    color: $white;
+    color: var(--color-white);
     font-size: 1.2rem;
     transition: opacity 0.3s ease;
 
