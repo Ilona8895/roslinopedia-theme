@@ -1,6 +1,6 @@
 .page-content {
   padding: 2rem 0;
-  background-color: var(--color-background);
+  background-color: var(--color-background-alt);
 
   @include atMedium {
     padding: 4rem 0;
@@ -11,10 +11,10 @@
   }
 
   .container {
-    max-width: 800px; // Węższa szerokość dla lepszej czytelności treści
+    max-width: 800px; 
   }
 
-  // Style dla paragrafów i tekstu
+
   p {
     font-size: 1rem;
     line-height: 1.8;
@@ -26,7 +26,7 @@
     }
   }
 
-  // Style dla nagłówków w treści
+
   h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
     margin-top: 2rem;
@@ -57,7 +57,6 @@
     }
   }
 
-  // Style dla list
   ul, ol {
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
@@ -81,7 +80,7 @@
     list-style-type: decimal;
   }
 
-  // Style dla linków w treści
+ 
   a {
     color: var(--color-primary);
     text-decoration: underline;
@@ -92,7 +91,7 @@
     }
   }
 
-  // Style dla cytatów
+
   blockquote {
     border-left: 4px solid var(--color-secondary);
     padding-left: 1.5rem;
@@ -113,7 +112,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
-  // Style dla tabel
+ 
   table {
     width: 100%;
     border-collapse: collapse;

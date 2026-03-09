@@ -1,7 +1,7 @@
 // === Colors  ===
 $colorPrimary: #5a7c4a;
 $colorSecondary: #b3cc97;
-$colorAccent: #8a9a6b;
+$colorAccent: $colorPrimary;
 
 $colorBackground: #ffffff;
 $colorBackgroundAlt: #f8f9fa;
@@ -14,7 +14,6 @@ $colorBlack: #000000;
 
 $colorLink: $colorPrimary;
 $colorBorder: #dddddd;
-$colorOverlay: rgba(0, 0, 0, 0.85);
 
 $colorDanger: #b01d1d;
 

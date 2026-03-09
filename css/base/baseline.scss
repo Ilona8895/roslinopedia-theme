@@ -1,4 +1,4 @@
-// Mixins dla media queries
+
 @mixin atSmall {
   @media (min-width: $breakpoint-small) {
     @content;
@@ -23,23 +23,24 @@
   }
 }
 
-// Zmienne CSS – motyw i dark mode nadpisują je
+
 :root {
   --color-primary: #{$colorPrimary};
-  --color-primary-rgb: 90, 124, 74;
   --color-secondary: #{$colorSecondary};
-  --color-text-muted-rgb: 153, 153, 153;
   --color-accent: #{$colorAccent};
+  
   --color-background: #{$colorBackground};
   --color-background-alt: #{$colorBackgroundAlt};
+
   --color-text: #{$colorText};
   --color-text-muted: #{$colorTextMuted};
+
   --color-white: #{$colorWhite};
   --color-black: #{$colorBlack};
-  --color-link: #{$colorLink};
+
   --color-border: #{$colorBorder};
+  --color-link: #{$colorLink};
   --color-danger: #{$colorDanger};
-  --color-overlay: #{$colorOverlay};
 }
 
 // Reset i podstawowe style
@@ -95,6 +96,8 @@ h1, h2, h3, h4, h5, h6 {
 input, textarea {
   font-family: inherit;
   font-size: 1rem;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
 }
 
 html.body-no-scroll {

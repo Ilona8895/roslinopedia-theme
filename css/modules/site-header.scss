@@ -79,7 +79,6 @@
       left: 0;
       right: 0;
       max-height: 70vh;
-      background-color: rgba(var(--color-primary-rgb), 0.98);
       padding: 80px 24px 32px;
       z-index: 2;
       display: flex;
@@ -102,7 +101,7 @@
       }
     }
 
-    // Desktop menu - always visible
+    // Desktop menu
     @include atLarge {
       display: block;
       position: static;

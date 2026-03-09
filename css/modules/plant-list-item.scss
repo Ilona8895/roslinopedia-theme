@@ -1,10 +1,22 @@
 .plant-list-item {
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--color-border);
+  
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: var(--color-border);
+  }
 
   @include atMedium {
     flex-direction: row;
@@ -12,8 +24,10 @@
     gap: 2rem;
   }
 
-  &:last-child {
-    border-bottom: none;
+  &:not(:has(+ .plant-list-item)) {
+    &::after {
+      display: none;
+    }
   }
 
   &__image-wrapper {

@@ -17,18 +17,17 @@
       opacity: 1;
     }
   
-    // Element - overlay (tło)
+
     &__overlay {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: var(--color-overlay);
+      background-color: color-mix(in srgb, var(--color-black) 65%, transparent);
       cursor: pointer;
     }
-  
-    // Element - kontener głównej treści (opakowuje search bar + wyniki)
+
     &__content {
       position: absolute;
       top: 0;
@@ -59,13 +58,13 @@
       }
     }
 
-    // Element - pasek wyszukiwania (góra modala)
+
     &__search-bar {
       display: flex;
       align-items: center;
       gap: 1.5rem;
       padding: 2rem;
-      border-bottom: 1px solid rgba(var(--color-text-muted-rgb), 0.4);
+      border-bottom: 1px solid var(--color-border);
       flex-shrink: 0;
 
       @include atMedium {
@@ -73,7 +72,7 @@
       }
     }
   
-    // Element - ikona wyszukiwania
+
     &__icon {
       font-size: 1.5rem;
       color: var(--color-primary);
@@ -110,7 +109,6 @@
       }
     }
   
-    // Element - przycisk zamknięcia
     &__close {
       background: none;
       border: none;
