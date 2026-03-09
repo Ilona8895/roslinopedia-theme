@@ -1,23 +1,23 @@
 
 body.login {
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
   }
   
 
   body.login input:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 1px var(--color-primary);
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 1px var(--color-secondary);
   }
   
 
   body.login #wp-submit {
-    background: var(--color-primary);
+    background: var(--color-secondary);
     border: none;
 
   }
 
   body.login .message {
-    border-left-color: var(--color-primary);
+    border-left-color: var(--color-secondary);
   }
 
   .login h1 a {

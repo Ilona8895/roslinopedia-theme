@@ -75,7 +75,7 @@
 
     &__icon {
       font-size: 1.5rem;
-      color: var(--color-primary);
+      color: var(--color-secondary);
       flex-shrink: 0;
   
       @include atMedium {
@@ -100,7 +100,7 @@
       }
   
       &:focus {
-        border-bottom-color: var(--color-primary);
+        border-bottom-color: var(--color-secondary);
       }
   
       @include atMedium {
@@ -121,7 +121,7 @@
       line-height: 1;
   
       &:hover {
-        color: var(--color-primary);
+        color: var(--color-secondary);
         transform: scale(1.1);
       }
   
@@ -163,7 +163,7 @@
     &__results-heading {
       font-size: 1.5rem;
       font-weight: 600;
-      color: var(--color-primary);
+      color: var(--color-secondary);
       margin-bottom: 1rem;
       padding: 1rem 2rem;
 
@@ -193,7 +193,7 @@
     width: 24px;
     height: 24px;
     border: 0.25rem solid rgba(0, 0, 0, 0.2);
-    border-top-color: var(--color-primary);
+    border-top-color: var(--color-secondary);
     -webkit-animation: spin 1s infinite linear;
     animation: spin 1s infinite linear;
     visibility: hidden;

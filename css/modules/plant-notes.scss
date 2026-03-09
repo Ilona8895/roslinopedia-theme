@@ -7,7 +7,7 @@
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 5px;
-    border-left: 3px solid var(--color-secondary);
+    border-left: 3px solid var(--color-primary);
 
     @include atMedium {
       margin: 1.5rem;
@@ -24,7 +24,7 @@
     &__title {
       font-size: 1.2rem;
       font-weight: 600;
-      color: var(--color-primary);
+      color: var(--color-secondary);
       margin-bottom: 0.5rem;
       padding: 0.5rem;
       
@@ -50,7 +50,7 @@
     }
 
     &__edit{
-      outline: 1px solid var(--color-secondary);  
+      outline: 1px solid var(--color-primary);  
       border-radius: 5px;
       resize: vertical;
 
@@ -72,7 +72,7 @@
     &__header {
       font-size: 1.2rem;
       font-weight: 600;
-      color: var(--color-primary);  
+      color: var(--color-secondary);  
       margin-bottom: 1rem;
     }
 
@@ -84,7 +84,7 @@
 
 
       &:focus {
-        border: 1px solid var(--color-secondary);
+        border: 1px solid var(--color-primary);
       };
     }
 
@@ -96,7 +96,7 @@
       resize: vertical;
 
       &:focus {
-        border: 1px solid var(--color-secondary);
+        border: 1px solid var(--color-primary);
       };
       
     }

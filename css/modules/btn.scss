@@ -16,21 +16,21 @@
   }
 
   &--green {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-
-    &:hover {
-      background-color: color-mix(in srgb, var(--color-secondary) 90%, black);
-      color: var(--color-white);
-    }
-  }
-
-  &--dark-green {
     background-color: var(--color-primary);
     color: var(--color-white);
 
     &:hover {
       background-color: color-mix(in srgb, var(--color-primary) 90%, black);
+      color: var(--color-white);
+    }
+  }
+
+  &--dark-green {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-secondary) 90%, black);
       color: var(--color-white);
     }
   }
