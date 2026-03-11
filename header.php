@@ -30,12 +30,17 @@
       <div class="site-header__buttons-container">
         <?php if(is_user_logged_in()) { ?>
           <div class="site-header__user">
-            <a href="<?php echo wp_logout_url(); ?>" class="btn btn--dark-grey btn--small">Wyloguj się</a>
+            <a href="<?php echo wp_logout_url(); ?>" class="btn btn--accent btn--small site-header__logout-text">Wyloguj się</a>
+            <a href="<?php echo wp_logout_url(); ?>" class="icon-link site-header__logout-icon">
+              <i class="fas fa-right-from-bracket"></i>
+            </a>
             <span class="site-header__avatar"><?php echo get_avatar(get_current_user_id(), 40); ?></span>
           </div>
           
         <?php } else { ?>
-          <a href="<?php echo wp_login_url(); ?>" class="icon-link"><i class="fas fa-user"></i></a>
+          <a href="<?php echo wp_login_url(); ?>" class="icon-link">
+            <i class="fas fa-user"></i>
+          </a>
         <?php } ?>
         
         <button class="icon-link search-modal__trigger" title="Otwórz wyszukiwarkę">

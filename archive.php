@@ -14,7 +14,7 @@ pageBanner(array(
       
       <div class="metabox metabox--blog">
           <p>Opublikowano przez <?php the_author_posts_link(); ?> <?php the_time('F j, Y'); ?> w kategorii <?php echo get_the_category_list(', '); ?></p>
-          <a href="<?php echo site_url('/blog') ?>" class="metabox__back-btn btn btn--green btn--small"><i class="fas fa-home"></i> Powrót do bloga</a>
+          <a href="<?php echo site_url('/blog') ?>" class="metabox__back-btn btn btn--primary btn--small"><i class="fas fa-home"></i> Powrót do bloga</a>
       </div>
           
     <?php 

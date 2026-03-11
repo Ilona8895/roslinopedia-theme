@@ -15,33 +15,33 @@
     opacity: 0.8;
   }
 
-  &--green {
+  &--primary {
     background-color: var(--color-primary);
-    color: var(--color-white);
+    color: var(--color-text);
 
     &:hover {
       background-color: color-mix(in srgb, var(--color-primary) 90%, black);
-      color: var(--color-white);
+      color: var(--color-text);
     }
   }
 
-  &--dark-green {
+  &--secondary {
     background-color: var(--color-secondary);
-    color: var(--color-white);
+    color: var(--color-text);
 
     &:hover {
       background-color: color-mix(in srgb, var(--color-secondary) 90%, black);
-      color: var(--color-white);
+      color: var(--color-text);
     }
   }
 
-  &--dark-grey {
-    background-color: var(--color-text);
-    color: var(--color-white);
+  &--accent {
+    background-color: var(--color-accent);
+    color: var(--color-text);
 
     &:hover {
-      background-color: color-mix(in srgb, var(--color-text) 90%, black);
-      color: var(--color-white);
+      background-color: color-mix(in srgb, var(--color-accent) 90%, black);
+      color: var(--color-text);
     }
   }
 

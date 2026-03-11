@@ -43,7 +43,7 @@
 
       </div>
       <div class="plant-database__cta">
-        <a href="<?php echo get_post_type_archive_link('roslina'); ?>" class="btn btn--green btn--large">Zobacz wszystkie rośliny</a>
+        <a href="<?php echo get_post_type_archive_link('roslina'); ?>" class="btn btn--primary btn--large">Zobacz wszystkie rośliny</a>
       </div>
     </div>
   </section>
@@ -82,7 +82,7 @@
         
       </div>
       <div class="blog-section__cta">
-        <a href="<?php echo site_url('/blog') ?>" class="btn btn--green btn--large">Zobacz więcej</a>
+        <a href="<?php echo site_url('/blog') ?>" class="btn btn--primary btn--large">Zobacz więcej</a>
       </div>
     </div>
   </section>

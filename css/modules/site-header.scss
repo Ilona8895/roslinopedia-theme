@@ -98,6 +98,8 @@
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+        background-color: var(--color-primary);
+        color: var(--color-white);
       }
     }
 
@@ -124,19 +126,38 @@
     display: flex;
     gap: 0;
     align-items: center;
-  }
-
-  &__avatar {
-    display: flex;
-    align-items: stretch;
-    flex-shrink: 0;
   
-    img {
-      display: block;
-      width: 34px;
-      height: 34px;
-      border-radius: 0 5px 5px 0;
-
+    .site-header__logout-text {
+      display: none;
+  
+      @include atLarge {
+        display: inline-block;
+      }
+    }
+  
+    .site-header__logout-icon {
+      display: flex;
+  
+      @include atLarge {
+        display: none;
+      }
+    }
+  
+    .site-header__avatar {
+      display: flex;
+      align-items: stretch;
+      flex-shrink: 0;
+  
+      img {
+        display: block;
+        width: 34px;
+        height: 34px;
+        border-radius: 0 5px 5px 0;
+      }
+  
+      @media (max-width: 959px) {
+        display: none;
+      }
     }
   }
 

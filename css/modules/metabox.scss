@@ -73,4 +73,31 @@
       margin-right: 0.5rem;
     }
   }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  
+    &-label {
+      font-weight: 600;
+      margin-right: 0.25rem;
+    }
+  }
+  
+  &__tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: color-mix(in srgb, var(--color-secondary) 20%, transparent);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-secondary) 35%, transparent);
+    }
+  }
 }

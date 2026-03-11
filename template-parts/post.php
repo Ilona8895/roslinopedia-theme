@@ -11,7 +11,7 @@
             } else {
               echo wp_trim_words(get_the_content(), 18);
             } ?></p></p>
-            <p><a class="btn btn--green" href="<?php the_permalink(); ?>">Czytaj dalej &raquo;</a></p>
+            <p><a class="btn btn--primary" href="<?php the_permalink(); ?>">Czytaj dalej &raquo;</a></p>
           </a>
         </div>
 </div>

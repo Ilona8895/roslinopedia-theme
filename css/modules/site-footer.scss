@@ -1,7 +1,7 @@
 .site-footer {
   padding-top: 3rem;
   background-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-text);
 
 
   // Flexbox na .group dla układu 3 kolumn
@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: var(--color-white);
+    color: var(--color-text);
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -35,7 +35,7 @@
 
     &:hover {
       text-decoration: none;
-      color: var(--color-white);
+      color: var(--color-text);
     }
 
     img {
@@ -47,7 +47,7 @@
     &-icon {
       width: 20px;
       height: 20px;
-      fill: var(--color-white);
+      fill: var(--color-text);
     }
   }
 
@@ -103,18 +103,18 @@
   &__heading {
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--color-white);
+    color: var(--color-text);
   }
 
   &__link {
-    color: var(--color-white);
+    color: var(--color-text);
     text-decoration: none;
     display: block;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
 
     &:hover {
-      color: var(--color-white);
+      color: var(--color-text);
       text-decoration: underline;
     }
   }
@@ -124,7 +124,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 0.8rem;
-    color: var(--color-white);
+    color: var(--color-text);
 
     i {
       width: 20px;
@@ -141,7 +141,7 @@
     gap: 1rem;
     text-align: center;
     font-size: 0.85rem;
-    color: var(--color-white);
+    color: var(--color-text);
 
     @include atMedium {
       flex-direction: row;
@@ -177,7 +177,7 @@
   }
 
   a {
-    color: var(--color-white);
+    color: var(--color-text);
     font-size: 1.2rem;
     transition: opacity 0.3s ease;
 
