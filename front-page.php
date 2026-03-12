@@ -3,7 +3,7 @@
 <section class="hero-section" style="background-image: url('<?php echo get_theme_file_uri('/images/hero.jpg') ?>')">
     <div class="hero-section__overlay"></div>
     <div class="hero-section__content">
-      <h1 class="hero-section__title">Baza roślin ogrodowych</h1>
+      <h1 class="hero-section__title">Baza roślin ogrodowych!!!</h1>
     </div>
   </section>
 
