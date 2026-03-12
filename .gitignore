@@ -13,5 +13,6 @@ Thumbs.db
 
 node_modules/
 package-lock.json
-build/
+
+#Potrzebny build na serwerze nie ma instalacji node
 
