@@ -1927,4 +1927,143 @@ body.login .message {
   border: 1px solid var(--color-primary);
 }
 
+.project-page {
+  padding: 2rem 0;
+  background-color: var(--color-background-alt);
+}
+
+@media (min-width: 767px) {
+  .project-page {
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 960px) {
+  .project-page {
+    padding: 5rem 0;
+  }
+}
+
+.project-page__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-text);
+}
+
+@media (min-width: 767px) {
+  .project-page__description {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.project-page__description img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.project-page__technologies {
+  margin-top: 2rem;
+}
+
+.project-page__technologies h3 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 767px) {
+  .project-page__technologies h3 {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+}
+
+@media (min-width: 960px) {
+  .project-page__technologies h3 {
+    font-size: 2rem;
+    text-align: left;
+  }
+}
+
+.tech-stack-icons {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  color: var(--color-text);
+}
+
+@media (min-width: 767px) {
+  .tech-stack-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .tech-stack-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tech {
+  display: flex;
+  width: 300px;
+  height: 200px;
+  border: 1px solid var(--color-border);
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+@media (min-width: 960px) {
+  .tech {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+.tech:hover {
+  cursor: pointer;
+  filter: brightness(0.75);
+}
+
+.tech:hover span {
+  display: block;
+}
+
+.tech:hover svg, .tech:hover img {
+  display: none;
+}
+
+.tech svg {
+  display: block;
+  width: 90%;
+  height: 90%;
+  color: #fff;
+  fill: currentColor;
+  margin: 0 auto;
+}
+
+.tech img {
+  width: 90%;
+  height: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 auto;
+}
+
+.tech span {
+  display: none;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 /*# sourceMappingURL=style-index.css.map*/
