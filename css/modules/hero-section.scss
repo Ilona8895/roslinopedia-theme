@@ -1,12 +1,16 @@
 .hero-section {
   position: relative;
-  min-height: 500px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @include atMedium {
+    min-height: 500px;
+  }
 
   &__overlay {
     position: absolute;

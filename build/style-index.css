@@ -393,7 +393,7 @@ html.body-no-scroll {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 @media (min-width: 960px) {
@@ -424,9 +424,11 @@ html.body-no-scroll {
   transition: color 0.3s ease;
 }
 
-.main-navigation a:hover {
-  color: var(--color-primary);
-  text-decoration: none;
+@media (hover: hover) and (pointer: fine) {
+  .main-navigation a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 @media (min-width: 960px) {
@@ -444,15 +446,29 @@ html.body-no-scroll {
   font-weight: 600;
 }
 
+@media (max-width: 959px) {
+  .main-navigation .current-menu-item > a,
+  .main-navigation .current-page-ancestor > a,
+  .main-navigation .current-menu-parent > a {
+    color: var(--color-secondary);
+  }
+}
+
 .hero-section {
   position: relative;
-  min-height: 500px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 767px) {
+  .hero-section {
+    min-height: 500px;
+  }
 }
 
 .hero-section__overlay {

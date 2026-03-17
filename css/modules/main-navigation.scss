@@ -3,7 +3,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    text-align: left;
 
     @include atLarge {
       text-align: left;
@@ -29,9 +29,11 @@
     display: block;
     transition: color 0.3s ease;
 
-    &:hover {
-      color: var(--color-primary);
-      text-decoration: none;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
     }
 
     @include atLarge {
@@ -47,5 +49,9 @@
   .current-menu-parent > a {
     color: var(--color-primary);
     font-weight: 600;
+
+    @media (max-width: 959px) {
+      color: var(--color-secondary);
+    }
   }
 }
