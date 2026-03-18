@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Ilona8895/projekt-roslinopedia#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^31.4.0"
+    "@prettier/plugin-php": "^0.24.0",
+    "@wordpress/scripts": "^31.4.0",
+    "prettier": "^3.8.1"
   }
 }
