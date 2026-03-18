@@ -1,6 +1,6 @@
 .project-page {
   padding: 2rem 0;
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background);
 
   @include atMedium {
     padding: 4rem 0;
@@ -11,20 +11,13 @@
   }
 
   &__description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: var(--color-text);
 
-    @include atMedium {
-      flex-direction: row;
-      gap: 2rem;
-    }
-
     & img {
-      width: 300px;
-      height: 300px;
+      width: 700px;
+      height: 500px;
       object-fit: contain;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     }
   }
 
