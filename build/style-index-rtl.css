@@ -1947,7 +1947,7 @@ body.login .message {
 .project-page__title {
   text-align: center;
   font-size: 36px;
-  margin-bottom: 12px;
+  margin-bottom: 50px;
   color: var(--color-text);
 }
 
@@ -2049,4 +2049,45 @@ body.login .message {
   color: var(--color-text);
   font-size: 2rem;
   font-weight: 600;
+}
+
+.project-page__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-page__list__item {
+  position: relative;
+  padding-right: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.project-page__list__item::before {
+  content: "\f06c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--color-link);
+  position: absolute;
+  right: 0;
+  font-size: 0.9rem;
+}
+
+.project-page__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (min-width: 767px) {
+  .project-page__cta {
+    flex-direction: row;
+  }
+}
+
+.project-page__cta i {
+  font-size: 2rem;
+  color: var(--color-text);
 }
