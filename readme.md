@@ -1,5 +1,7 @@
 # Roślinopedia Theme
 
+🌐 **[roslinopedia.pl](https://roslinopedia.pl/)**
+
 A custom WordPress theme for Roślinopedia — a garden plant knowledge base designed for amateur gardeners and people planning plantings.
 
 ## About the Project
